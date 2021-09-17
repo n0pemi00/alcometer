@@ -21,11 +21,11 @@ function App() {
    if (gender === 'male') {
 
       let left =  gramsleft / (weight * 0.7)
-      setResult(left);
+      setResult(Math.max(0,left));
     }
     else {
       let left = gramsleft / (weight * 0.6)
-      setResult(left);
+      setResult(Math.max(0,left));
     }
   }
   return (
@@ -80,7 +80,7 @@ function App() {
       </div>
       <div>
         <br></br>
-        <output>{result}</output>
+        <output>{result.toFixed(1)}</output>
       </div>
       <button>Calculate</button>
     </form>
